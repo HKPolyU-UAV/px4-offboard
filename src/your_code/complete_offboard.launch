@@ -1,0 +1,10 @@
+<launch>
+    <node pkg="mavlink_message" type="mavlink_message" name="mavlink" output="screen">
+    </node>
+
+    <node pkg="att_controller" type="att_controller" name="att_controller" output="screen">
+    </node>
+
+
+
+</launch>

@@ -1,0 +1,42 @@
+# reconfigure PWM settings
+
+# motor ESC out configuration:
+#	rate = 400
+#	failsafe = disarmed = 900
+#	min = 1075
+#	max = 1950
+
+# servo out configuration:
+#	rate = 50
+#	failsafe = 1500
+#	disarmed = 0
+#	min = 1000
+#	max = 2000	
+
+# current configuration:
+#	out 1 ~ 4: motor ESC
+#	out 5 ~ 8: servo
+#
+
+# output 1, 2
+pwm rate -g 0 -r 400
+
+# output 3, 4
+pwm rate -g 2 -r 400
+
+pwm failsafe -c 1234 -p 900
+pwm disarmed -c 1234 -p 900
+pwm min -c 1234 -p 1075
+pwm max -c 1234 -p 1950
+
+# output 5, 6, 7, 8
+pwm rate -g 1 -r 50
+
+pwm failsafe -c 5678 -p 1500
+pwm disarmed -c 5678 -p 0
+pwm min -c 5678 -p 1000
+pwm max -c 5678 -p 2000
+
+# stop built-in controllers
+# mc_att_control stop
+# mc_pos_control stop
